@@ -11,5 +11,5 @@ Applicazione desktop in NodeJs che implementa un client FTP.
 - Andrea Dallorto
 - Anielle Gomes Macedo
 - Elisabetta Barbi
-- Ilya
+- Ilya Pizzo Illarionov
 - Pietro Cipriani
