@@ -1,0 +1,22 @@
+{
+  "name": "projectnodejs",
+  "version": "1.0.0",
+  "description": "TCP server NodeJs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnielleMacedo/ProjectNodeJs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnielleMacedo/ProjectNodeJs/issues"
+  },
+  "homepage": "https://github.com/AnielleMacedo/ProjectNodeJs#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
