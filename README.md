@@ -13,3 +13,7 @@ Applicazione desktop in NodeJs che implementa un client FTP.
 - Elisabetta Barbi
 - Ilya Pizzo Illarionov
 - Pietro Cipriani
+
+# To Run
+
+npm install

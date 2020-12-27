@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/AnielleMacedo/ProjectNodeJs#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "colors": "^1.4.0"
   }
 }
