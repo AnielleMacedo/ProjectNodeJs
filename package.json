@@ -1,22 +1,15 @@
 {
-  "name": "projectnodejs",
+  "name": "tcpclientnodejs",
   "version": "1.0.0",
-  "description": "TCP server NodeJs",
+  "description": "Tcp Client",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AnielleMacedo/ProjectNodeJs.git"
-  },
-  "author": "",
+  "author": "Grupo Progetto NodeJs",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AnielleMacedo/ProjectNodeJs/issues"
-  },
-  "homepage": "https://github.com/AnielleMacedo/ProjectNodeJs#readme",
   "dependencies": {
-    "colors": "^1.4.0"
+    "colors": "^1.4.0",
+    "readline-sync": "^1.4.10"
   }
 }
