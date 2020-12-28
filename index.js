@@ -109,7 +109,7 @@ function InviaDati(data){
 
 function Disconettere(){
     if (!client) {
-    console.log("Non existe conessione attiva..Prova a conetterti!".red);
+    console.log("Non existe connessione attiva..Prova a conetterti!".red);
     setTimeout(function(){
         menu();
     },0);
