@@ -10,6 +10,7 @@ const net = require("net")
 //port e host per fare la connessione al server
 const HOST = "192.168.178.134"; //test di conessione a un altro pc sulla stessa rete locale
 const PORT = "9000";
+//Includere LOGIN
 //const username= "gruppoits";
 //const password= "*******";
 
@@ -18,6 +19,7 @@ let client = null;
 
 
 //menu utente
+//Includere trasferimento di FILE/gestione criptata dei file
 function menu(){ 
     let lineRead= readlineSync.question("\nScegliere tra le seguenti opzioni: \n1-Connettere \n2-Invia Dati \n3-Disconettere \n4-Esci\n\n->");
     
