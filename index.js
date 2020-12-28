@@ -8,9 +8,9 @@ const net = require("net")
 
 
 //port e host per fare la connessione al server
-const HOST = "192.168.178.134"; //test di conessione a un altro pc sulla stessa rete locale
+const HOST = "192.168.178.134"; //test di connessione a un altro pc sulla stessa rete locale
 const PORT = "9000";
-//Includere LOGIN
+//Includere LOGIN accesso utente al server per lo scambio di file
 //const username= "gruppoits";
 //const password= "*******";
 
