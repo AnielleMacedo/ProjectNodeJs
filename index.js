@@ -7,7 +7,7 @@ const colors = require("colors");
 const net = require("net")
 
 
-//port e host per connetare al server
+//port e host per fare la connessione al server
 const HOST = "192.168.178.134"; //test di conessione a un altro pc sulla stessa rete locale
 const PORT = "9000";
 //const username= "gruppoits";
