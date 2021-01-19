@@ -14,7 +14,7 @@ Working in progress
 
 ## Running the project
 
-```node
+```
 
 node index.js  #upload to the server
 node s3-upload.js  #upload to the cloud
