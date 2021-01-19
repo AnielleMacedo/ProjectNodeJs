@@ -47,7 +47,7 @@ app.get("/", (req, res) =>
 app.post('/upload', upload.array('fileToUpload'), (req, res) => 
 {
     return res.json({ status: 'OK', uploaded: req.files.length });
-},);
+});
 
 //Inizializzo il mio server nella porta 9000
 const server = app.listen(9000, function ()

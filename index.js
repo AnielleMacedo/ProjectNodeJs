@@ -9,7 +9,7 @@ npm install aws-sdk multer-s3
 
 const express= require("express");
 const app= express(); //creo per iniziallizare la mia applicazione
-app.use(express.static(__dirname + '/public')); // per accedere al css
+app.use(express.static(__dirname + '/public'));
 
 /*
 libreria usata per fare l'upload di files
@@ -43,18 +43,17 @@ const upload = multer({storage})
 
 //creo la rotta principale dell'applicazione
 app.get("/", (req, res) =>
-{
-    //renderizzo alla view
+ {
+    //res.send("Benvenuto!")
+    //renderizzo mia view
     res.render("homepage.ejs");
 })
 
-/*
-creo una route post chiamata upload per ricevere i file
-accetta più di un file
-*/
+//creo una route post chaiamata upload per ricevere i file
 app.post("/upload", upload.array("fileToUpload"), (req, res) => 
-{
-  res.render("uploadView.ejs");
+{  //acceta più di un file
+   //res.send("file ricevuto");
+    return res.json({status:'File Inviati!!', uploaded: req.files.length})
 })
 
 //Inizializzo il mio server nella porta 9000
