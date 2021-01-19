@@ -22,7 +22,7 @@ node index.js      #upload files to the server
 node s3-upload.js  #upload files to the cloud
 ```
 
-## Gruppo
+## Group
 
 * Andrea Dallorto
 
