@@ -16,7 +16,8 @@ Working in progress
 
 ```
 
-node index.js  #upload to the server
+node index.js      #upload to the server
+
 node s3-upload.js  #upload to the cloud
 ```
 
