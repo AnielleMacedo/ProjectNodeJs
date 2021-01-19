@@ -17,17 +17,21 @@ Working in progress
 
 ```
 
-node index.js      #upload to the server
+node index.js      #upload files to the server
 
-node s3-upload.js  #upload to the cloud
+node s3-upload.js  #upload files to the cloud
 ```
 
 ## Gruppo
 
 * Andrea Dallorto
+
 * Anielle Macedo
+
 * Elisabetta Barbi
+
 * Ilya Pizzo Illarionov
+
 * Pietro Cipriani
 
 
