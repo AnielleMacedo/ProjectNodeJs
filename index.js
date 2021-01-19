@@ -1,129 +1,57 @@
-//input del utente 
-const readlineSync = require("readline-sync");
-//colors console
-const colors = require("colors");
-//network module to have a TCP based comunication
-//NodeJs Docs: net module is used to create both servers and clients. This module provides an asynchronous network wrapper and it can be imported using the following syntax.
-const net = require("net")
+/*installo nodemon globalmente per evitare de riavviare il server
+ogni volta che cambiamo il file
+npm start -- cosi inizia gia con nodemon
 
+librerie installate:
+npm install --save ejs
+npm install --save multer
+npm install aws-sdk multer-s3
 
-//port e host per fare la connessione al server
-const HOST = "192.168.178.134"; //test di connessione a un altro pc sulla stessa rete locale
-const PORT = "9000";
-//Includere LOGIN accesso utente al server per lo scambio di file
-//const username= "gruppoits";
-//const password= "*******";
+nao precisou fazer require do ejs pq parece q ja vem dentro de express, se fosse hbs era necessario
+ */
+const express= require("express");
+const app= express(); //crio instancio express per iniciar mia applicazione
+app.use(express.static(__dirname + '/public'));
 
-//instance TCP client 
-let client = null;
+//libreria usata per fare upload di files
+//multer è un middleware di upload, ossia sta in mezzo tra la request del client e la response del server??/la route
+//quando lutente invia un file alla route principlae il multer prendi questa richiesta e estrarre il file per essere possiblire manipolare il file
+const multer = require("multer");
 
+//libreria per visualizazione delle pagine html della cartella views
+//uso template ejs extensao ejs nao precisou fazer require
+app.set('view engine', 'ejs');
 
-//menu utente
-//Includere trasferimento di FILE/gestione criptata dei file
-function menu(){ 
-    let lineRead= readlineSync.question("\nScegliere tra le seguenti opzioni: \n1-Connettere \n2-Invia Dati \n3-Disconettere \n4-Esci\n\n->");
-    
-    switch(lineRead){
-        case "1":
-            Connettere();
-            break;
-        case "2":
-            let data= readlineSync.question("Type msg per invio: ");
-            InviaDati(data);
-            break;
-        case "3":
-            Disconettere();
-            break;
-        case "4":
-            return;//esci dal menu
-            break;
-        default:
-            setTimeout(function(){
-                console.log("Opzione Invalida!")
-                menu();
-            },0);
-            break;
+//funzione di multer per rinominare  i file
+const storage = multer.diskStorage({//permite manipolare i file dopo upload
+    destination: function (req, file, cb) { //callback
+      cb(null, 'uploads/')//coloca o diretorio q quer salvar
+    },
+    filename: function (req, file, cb) {
+      cb(null, file.originalname) //lascio nome originale + extension
     }
-    
-}
-
-setTimeout(function(){//torna novamente ao menu em caso de input inexist
-    menu();
-},0);
-
-
-//funzioni
-
-
-//conessione socket client
-function Connettere(){
-    if(client){
-        console.log("Viene stabilita una connessione!".green);
-        setTimeout(function(){
-            menu();
-        },0);
-        return;
-    }
-
-    client = new net.Socket();
-
+})
    
-    client.on("error", function(err){
-        client.destroy();
-        client= null;
-        console.log("ERROR: Conessione non riuscita. Msg: %s".gray, err.message);
-        setTimeout(function(){
-            menu();
-        },0);
-    });
-
-  
-    client.on("data", function(data){
-        console.log("Ricevuto il messaggio: %s".gren, data);
-        setTimeout(function(){
-            menu();
-        },0);
-
-    });
+//configurazione del multer: crio objeto p ele e o destino p onde vao meus files
+const upload = multer({storage})
+//const upload = multer({dest: "uploads/"})
 
 
-    //conessione con il server usando lo stesso socket
-    client.connect(PORT, HOST, function(){
-        console.log("Connessione riuscita con successo!".green);
-        setTimeout(function(){
-            menu();
-        },0);
-    });        
-}
+//crio la route principale della applicazione
+app.get("/", (req, res) => {
+    //res.send("Benvenuto!")
+    //renderizzo mia view
+    res.render("homepage.ejs");
+})
 
-function InviaDati(data){
-    //confere se non esiste con
-    if (!client) {
-        console.log("Non existe connessione attiva..Prova a connetterti".red);
-        setTimeout(function(){
-            menu();
-        },0);
-        return;
-    }
-    //altrimente uso socket per inviare info al server
-    client.write(data);
-}
-
-function Disconettere(){
-    if (!client) {
-    console.log("Non existe connessione attiva..Prova a conetterti!".red);
-    setTimeout(function(){
-        menu();
-    },0);
-    return;  
-   }
-
-   client.destroy();
-   client= null;
-   console.log("Connessione Terminata".yellow);
-   setTimeout(function(){
-       menu();
-   },0);
+//creo 1 route post chamada upload per riceve i file
+app.post("/upload", upload.array("fileToUpload"), (req, res) => {  //aceitar mais de 1 file array
+   // res.send("Arquivo recebido");
+    return res.json({status:'File Inviati!!', uploaded: req.files.length})
+})
 
 
-}
+//Inizio il mio server nella porta 9000
+const server = app.listen(9000, function (){
+    console.log("Server listening on port: %j", server.address().port);
+});

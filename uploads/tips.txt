@@ -1,0 +1,4 @@
+salva db em app qdo lavoriamo com db locale
+ma noi vogliamo lavorare com i sql server vero percio salvato in model
+
+
