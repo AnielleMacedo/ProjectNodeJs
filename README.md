@@ -8,10 +8,17 @@ Upload files to a server NodeJs and a Cloud Services Storage: AWS S3
 Working in progress
 ```
 
-## Running the project
+## Installation
 
 - npm install
-- node index.js
+
+## Running the project
+
+```node
+
+node index.js  #upload to the server
+node s3-upload.js  #upload to the cloud
+```
 
 ## Gruppo
 
