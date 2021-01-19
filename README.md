@@ -1,6 +1,6 @@
 # ProjectNodeJs
 
-Upload files to a server NodeJs and a Cloud Services Storage: AWS S3
+Upload files to a server NodeJs and a Cloud Storage Service: AWS S3
 
 ## Status
 
@@ -11,6 +11,7 @@ Working in progress
 ## Installation
 
 - npm install
+
 
 ## Running the project
 
