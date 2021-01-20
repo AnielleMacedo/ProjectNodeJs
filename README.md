@@ -1,4 +1,4 @@
-# ProjectNodeJs
+## ProjectNodeJs
 
 Upload files to a server NodeJs and a Cloud Storage Service: AWS S3
 
@@ -15,7 +15,7 @@ Working in progress
 
 ## Running the project
 
-```
+```javascript
 
 node index.js      #upload files to the server
 
