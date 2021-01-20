@@ -10,7 +10,7 @@ Working in progress
 
 ## Installation
 
-You can install the project with the following command:
+You can install the application with the following command:
 
 ```
 npm install
