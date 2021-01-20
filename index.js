@@ -54,7 +54,8 @@ accetta più di un file
 */
 app.post("/upload", upload.array("fileToUpload"), (req, res) => 
 {
-  res.render("uploadView.ejs");
+  return res.json({status:'File Inviati!!', uploaded: req.files.length})
+  //res.render("uploadView.ejs");
 })
 
 //Inizializzo il mio server nella porta 9000
