@@ -5,7 +5,7 @@ Upload files to a server NodeJs and a Cloud Storage Service: AWS S3
 ## Status
 
 ```
-Working in progress
+Completed
 ```
 
 ## Installation
