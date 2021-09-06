@@ -1,1 +1,5 @@
+#Ignore my aws credentials file
+*.env
+
+#Ignore 
 node_modules/
