@@ -34,7 +34,7 @@ You can see the application at the following url: [http://localhost:9000](http:/
 
 ### Note:
 
-To run this project you need to have your amazon credentials and put them in a file with extension: .env like this:
+To run this project you need to have your amazon credentials and put them in a file with extension: .env and insert a content like this:
 
 ```
 AWS_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
